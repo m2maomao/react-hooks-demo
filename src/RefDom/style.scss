@@ -1,0 +1,23 @@
+.section {
+  height: 1000px;
+  width: 1000px;
+  margin-top: 500px;
+  background: lightblue;
+}
+.nav {
+  button {
+    margin: .25rem;
+  }
+}
+.cat-list{
+  width: 100%;
+  overflow: hidden;
+  ul {
+    white-space: nowrap;
+    list-style-type: none;
+    li {
+      display: inline;
+      padding: 0.5rem;
+    }
+  }
+}
