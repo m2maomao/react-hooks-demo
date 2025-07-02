@@ -1,12 +1,12 @@
 interface CreateTodoProps {
   text: string;
-  complete?: boolean;
+  completed?: boolean;
 }
 
 interface Todo {
   id: number;
   text: string;
-  complete: boolean;
+  completed: boolean;
 }
 
 export type {
