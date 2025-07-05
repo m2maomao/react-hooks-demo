@@ -1,14 +1,18 @@
-import { useState, useEffect} from 'react';
+import { useState } from 'react';
 import type { EditContactProps } from './types/contact.types';
 
-const EditContact = ({savedContact, onSave}: EditContactProps) => {
+const EditContact = (props: EditContactProps) => {
+  return (
+    <EditForm
+      {...props}
+      key={props.savedContact.id}
+    />
+  );
+}
+
+const EditForm = ({savedContact, onSave}: EditContactProps) => {
   const [name, setName] = useState(savedContact.name);
   const [email, setEmail] = useState(savedContact.email);
-
-  useEffect(() => {
-    setName(savedContact.name);
-    setEmail(savedContact.email);
-  }, [savedContact]);
 
   return (
     <section>
