@@ -1,6 +1,8 @@
 import { useState } from "react";
 import ContactList from './ContactList';
 import EditContact from './EditContact';
+import type { Contact } from './types/contact.types';
+import './index.scss';
 
 const initialContacts = [
   { id: 0, name: 'Taylor', email: 'taylor@mail.com' },
@@ -11,9 +13,9 @@ const initialContacts = [
 const ContactManager = () => {
   const [contacts, setContacts] = useState(initialContacts);
   const [selectedId, setSelectedId] = useState(0);
-  const selectedContact = contacts.find(c => c.id === selectedId);
+  const selectedContact = contacts.find(c => c.id === selectedId) as Contact;
 
-  const handleSave = (updatedData) => {
+  const handleSave = (updatedData: Contact) => {
     const nextContacts = contacts.map(c => {
       if (c.id === updatedData.id) {
         return updatedData;

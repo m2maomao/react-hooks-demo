@@ -1,4 +1,6 @@
-const ContactList = ({contacts, selectedId, onSelect}) => {
+import type { ContactListProps } from './types/contact.types';
+
+const ContactList = ({contacts, selectedId, onSelect}: ContactListProps) => {
   return (
     <section>
       <ul>
@@ -15,3 +17,5 @@ const ContactList = ({contacts, selectedId, onSelect}) => {
     </section>
   )
 }
+
+export default ContactList;
