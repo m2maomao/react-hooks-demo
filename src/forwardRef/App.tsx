@@ -9,7 +9,7 @@ const App = () => {
   return (
     <>
       <Child ref={ref} />
-      <button onClick={handleClick}></button>
+      <button onClick={handleClick}>获取焦点</button>
     </>
   )
 }
