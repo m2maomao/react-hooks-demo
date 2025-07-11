@@ -7,7 +7,7 @@ const fetchData = (url: string) => {
       throw Error('预期的 URL，如“/planets/earth/places”。 已收到："' + url + '"。');
     }
     return fetchPlaces(match[1]);
-  } else throw Error('预期的 URL，如“/planets”或“/planets/earth/places”。已收到："' + url + '"。');
+  } else throw Error('预期的 URL,如“/planets”或“/planets/earth/places”。已收到："' + url + '"。');
 }
 
 async function fetchPlanets() {

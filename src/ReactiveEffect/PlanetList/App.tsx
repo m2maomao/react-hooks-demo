@@ -23,7 +23,7 @@ const Page = () => {
     let ignore = false;
     (fetchData('/planets') as Promise<Planet[]>).then(result => {
       if (!ignore && result.length > 0) {
-        console.log('获取了一个行星列表。')
+        console.log('获取了一个行星列表！')
         setPlanetList(result);
         setPlanetId(result[0].id); // 选择第一个行星
       }
