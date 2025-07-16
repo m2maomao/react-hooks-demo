@@ -14,6 +14,9 @@
  * 
  * react => 运行时
  * vue => 编译时的行为
+ * 
+ * + - * / => 计算count
+ * count => 多重操作方案，每一种方案可能有很多地方都需要使用
  */ 
 
 import { useState } from "react";
@@ -29,7 +32,7 @@ const App  = () => {
   // 函数是一等公民
   return (
     <>
-      <div>Hello, React!{count}</div>
+      <div>{count}</div>
       <button onClick={handleClick}>+</button>
     </>
   )
