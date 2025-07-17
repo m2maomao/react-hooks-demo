@@ -2,6 +2,8 @@
  * 
  * + - * / => 计算count
  * count => 多重操作方案，每一种方案可能有很多地方都需要使用
+ * 
+ * dispatch => {type, payload}
  */ 
 
 import { useReducer } from "react";
