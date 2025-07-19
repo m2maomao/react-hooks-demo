@@ -17,6 +17,19 @@ const createStateSetter = (stateIndex) => {
   }
 }
 
+const useReducer = (reducer, initialState) => {
+  const [state, setState] = useState(initialState);
+
+  const dispatch = (action) => {
+    const newState = reducer(state, action);
+    setState(newState);
+  }
+  return [
+    state,
+    dispatch
+  ]
+}
+
 const useState = (initialState) => {
   states[stateIndex] = createState(initialState, stateIndex);
 
@@ -35,5 +48,6 @@ const useState = (initialState) => {
 }
 
 export {
-  useState
+  useState,
+  useReducer
 }
