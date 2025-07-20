@@ -1,4 +1,8 @@
-import { useState, memo } from "react";
+import {
+  useState,
+  memo,
+  useMemo,
+} from "react";
 
 /**
  *  函数组件最大的弱点： 渲染执行
@@ -66,9 +70,12 @@ const App = () => {
   const [count1, setCount1] = useState(0);
   const [count2, setCount2] = useState(0);
 
-  const childData = {
-    count2
-  }
+  // const childData = {
+  //   count2
+  // }
+
+  // 只有count2变化的时候，才会返回新的引用
+  const childData = useMemo(() => ({ count2 }), [count2]);
 
 
   return (
