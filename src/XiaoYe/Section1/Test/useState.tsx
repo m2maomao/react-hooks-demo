@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const App = () => {
   const [count, setCount] = useState(0);
   const handleClick = () => {
     setCount((count) => count + 1);
   }
+  useEffect(() => {
+    console.log('useEffect执行了');
+  });
   return (
     <>
       <div>Hello!{count}</div>
