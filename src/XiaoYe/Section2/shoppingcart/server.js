@@ -45,7 +45,7 @@ const data = [
   },
 ];
 
-app.all('*', (req, res, next) => {
+app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,POST');
   next();
@@ -61,7 +61,7 @@ app.get('/detail/:id', (req, res) => {
    * get => req.params
    */
   const {id} = req.params;
-  const detail = data.find(item => item.id === id);
+  const detail = data.find(item => item.id == id);
 
   res.json(detail);
 })
