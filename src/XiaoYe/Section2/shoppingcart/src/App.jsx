@@ -1,8 +1,11 @@
+import {createHashRouter, RouterProvider} from 'react-router-dom';
+import router from '@/config/router';
+
+const routerConfig = createHashRouter(router);
+
 const App = () => {
   return (
-    <>
-      <div>Hello, React !!!!</div>
-    </>
+    <RouterProvider router={routerConfig} />
   )
 }
 
