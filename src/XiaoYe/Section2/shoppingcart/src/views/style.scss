@@ -1,0 +1,17 @@
+$blueColor: #4d6bfe;
+.link {
+  line-height: 16px;
+  a {
+    &:last-child {
+      border-right: 0;
+    }
+    margin: 0 10px 0 0;
+    padding: 0 10px 0 0;
+    border-right: 1px solid $blueColor;
+    text-decoration: none;
+    line-height: 16px;
+    font-size: 16px;
+    display: inline-block;
+    color: $blueColor;
+  }
+}

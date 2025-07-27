@@ -17,7 +17,7 @@ export default [
         element: <HighList />
       },
       {
-        index: 'hot_list',
+        path: '/hot_list',
         element: <HotList />
       }
     ]

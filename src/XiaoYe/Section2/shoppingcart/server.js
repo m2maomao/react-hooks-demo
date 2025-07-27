@@ -1,3 +1,7 @@
+const express = require('express');
+
+const app = express();
+
 const data = [
   {
     id: 1,
@@ -39,4 +43,28 @@ const data = [
     hot: true,
     high: false
   },
-]
+];
+
+app.all('*', (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,POST');
+  next();
+});
+
+app.get('/products', (req, res) => {
+  res.json(data);
+});
+
+app.get('/detail/:id', (req, res) => {
+  /**
+   * post => req.body 
+   * get => req.params
+   */
+  const {id} = req.params;
+  const detail = data.find(item => item.id === id);
+
+  res.json(detail);
+})
+
+app.listen(3000);
+
