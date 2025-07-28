@@ -5,7 +5,7 @@ import {
 import { createContext } from 'react';
 import router from '@/config/router';
 import { useEffect } from 'react';
-import axios from './utils/http';
+import {useProducts} from '@/hooks/index';
 
 export const ProductContext = createContext();
 
@@ -17,15 +17,9 @@ const App = () => {
    * useEffect 
    * useLayoutEffect
    */
-  useEffect(() => {
-    ;(async () => {
-      // const products = await axios('/products');
-      const {data} = await axios('/detail/2');
-      console.log('data: ', data);
-    })();
-  }, []);
+  const [products ] = useProducts('/products');
   return (
-    <ProductContext.Provider value={{a: 1}}>
+    <ProductContext.Provider value={ products }>
       <RouterProvider router={routerConfig} />
     </ProductContext.Provider>
   )
