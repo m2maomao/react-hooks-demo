@@ -2,10 +2,12 @@ import {
   createHashRouter,
   RouterProvider
 } from 'react-router-dom';
-
+import { createContext } from 'react';
 import router from '@/config/router';
 import { useEffect } from 'react';
 import axios from './utils/http';
+
+export const ProductContext = createContext();
 
 const routerConfig = createHashRouter(router);
 
@@ -23,7 +25,9 @@ const App = () => {
     })();
   }, []);
   return (
-    <RouterProvider router={routerConfig} />
+    <ProductContext.Provider value={{a: 1}}>
+      <RouterProvider router={routerConfig} />
+    </ProductContext.Provider>
   )
 }
 
