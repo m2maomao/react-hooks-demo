@@ -9,7 +9,7 @@ const App = () => {
       <h1>精品商品</h1>
       <div>
         {
-          highList && highList.map(item => (
+          highList && highList.map((item) => (
             <ProductItem data={item} key={item.id} />
           ))
         }
