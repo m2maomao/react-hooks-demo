@@ -3,11 +3,10 @@ import {
   RouterProvider
 } from 'react-router-dom';
 import { createContext } from 'react';
-import router from '@/config/router';
-import { useEffect } from 'react';
-import {useProducts} from '@/hooks/index';
+import router from './config/router';
+import { useProducts } from './hooks/index';
 
-export const ProductContext = createContext();
+export const ProductContext = createContext<Product[]>([]);
 
 const routerConfig = createHashRouter(router);
 

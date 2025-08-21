@@ -1,5 +1,5 @@
 import { useOutletContext } from "react-router";
-import ProductItem from "@/components/ProductItem";
+import ProductItem from "../../components/ProductItem";
 
 const App = () => {
   const { highList } = useOutletContext();

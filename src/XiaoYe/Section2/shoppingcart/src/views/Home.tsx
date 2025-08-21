@@ -1,13 +1,13 @@
 import { useContext, useMemo} from 'react';
-import { ProductContext } from '@/App';
+import { ProductContext } from '../App';
 
 import {Outlet, Link} from 'react-router-dom';
 import './style.scss';
 
 const App = () => {
   const products = useContext(ProductContext);
-  const hotList = useMemo(() => products.filter(item => item.hot), [products]);
-  const highList = useMemo(() => products.filter(item => item.high), [products]);
+  const hotList = useMemo(() => products?.filter(item => item.hot) || [], [products]);
+  const highList = useMemo(() => products?.filter(item => item.high) || [], [products]);
   return (
     <>
       <h1>首页</h1>

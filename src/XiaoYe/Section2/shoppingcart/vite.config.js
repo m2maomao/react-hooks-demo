@@ -1,9 +1,5 @@
 import { defineConfig } from "vite";
-
-import {
-  resolve
-} from 'path';
-
+import { resolve } from 'path';
 import React from '@vitejs/plugin-react';
 
 export default defineConfig({
@@ -11,11 +7,8 @@ export default defineConfig({
     React()
   ],
   resolve: {
-    alias: [
-      {
-        find: '@',
-        replacement: resolve(__dirname, 'src')
-      }
-    ]
+    alias: {
+      '@': resolve(__dirname, 'src')
+    }
   }
 })

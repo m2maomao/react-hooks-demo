@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import http from '@/utils/http';
+import http from '../utils/http';
 
 const useProducts = (url) => {
   const [products, setProducts] = useState([]);
